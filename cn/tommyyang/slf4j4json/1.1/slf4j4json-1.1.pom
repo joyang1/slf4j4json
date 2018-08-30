@@ -6,7 +6,7 @@
 
     <groupId>cn.tommyyang</groupId>
     <artifactId>slf4j4json</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <properties>
         <github.global.server>github</github.global.server>
     </properties>
