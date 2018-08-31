@@ -1,5 +1,7 @@
 # `slf4j4json`
 
+[![Build Status](https://travis-ci.org/joyang1/slf4j4json.svg?branch=master)](https://travis-ci.org/joyang1/slf4j4json.svg)
+
 ## Description
 为slf4j提供自定义json格式的log输出
 
