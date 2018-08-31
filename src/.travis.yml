@@ -1,0 +1,14 @@
+language: java
+jdk:
+- oraclejdk8
+- openjdk8
+notification:
+  email:
+    recipients:
+    - tingzai.yang@gmail.com
+    on_success: never
+    on_failure: always
+
+cache:
+  directories:
+  - $HOME/cache
