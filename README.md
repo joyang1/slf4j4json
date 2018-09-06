@@ -74,3 +74,19 @@ jsonLogger.field("msg","infotest2").longField("long", 23L).log();
     - 实现JsonLog For Java的基本功能
 - `1.1版本`
     - 修复JsonLogger jsonLogger = logger.info().strField("appname", "app").getLogger(); 出现重复内容的bug
+
+- `1.2版本`
+   - 去掉log中自带的index键值对
+   - repository修改
+     ``` java
+     <repositories>
+         <repository>
+             <id>release</id>
+             <url>https://raw.github.com/joyang1/slf4j4json/mvn-repo/</url>
+             <snapshots>
+                 <enabled>true</enabled>
+                 <updatePolicy>always</updatePolicy>
+             </snapshots>
+         </repository>
+     </repositories>
+     ```
