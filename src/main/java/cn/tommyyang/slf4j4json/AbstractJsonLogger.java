@@ -218,7 +218,7 @@ public abstract class AbstractJsonLogger implements JsonLogger {
             }
         }
 
-        this.jsonObject.add("index", this.gson.toJsonTree("server-end-log"));
+        //this.jsonObject.add("index", this.gson.toJsonTree("server-end-log"));
         this.jsonObject.add("hostname", this.gson.toJsonTree(this.getHostName()));
         this.jsonObject.add("level", this.gson.toJsonTree(level));
 //        this.jsonObject.add("thread_name", this.gson.toJsonTree(Thread.currentThread().getName()));
