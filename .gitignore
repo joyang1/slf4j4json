@@ -1,0 +1,10 @@
+.idea/
+.vscode/
+.project
+.project/
+.settings/
+target/
+*.iml
+/dependency-reduced-pom.xml
+.DS_Store
+.nojekyll
