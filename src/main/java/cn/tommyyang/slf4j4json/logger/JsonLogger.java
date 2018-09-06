@@ -1,4 +1,4 @@
-package cn.tommyyang.slf4j4json;
+package cn.tommyyang.slf4j4json.logger;
 
 import com.google.gson.JsonElement;
 

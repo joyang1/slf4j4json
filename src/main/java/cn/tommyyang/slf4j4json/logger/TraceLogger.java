@@ -1,5 +1,6 @@
-package cn.tommyyang.slf4j4json;
+package cn.tommyyang.slf4j4json.logger;
 
+import cn.tommyyang.slf4j4json.logger.AbstractJsonLogger;
 import com.google.gson.Gson;
 import org.apache.commons.lang3.time.FastDateFormat;
 import org.slf4j.Logger;

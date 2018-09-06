@@ -1,5 +1,6 @@
-package cn.tommyyang.slf4j4json;
+package cn.tommyyang.slf4j4json.logger;
 
+import cn.tommyyang.slf4j4json.logger.JsonLogger;
 import com.google.gson.JsonElement;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package cn.tommyyang;
+package cn.tommyyang.slf4j4json;
 
-import cn.tommyyang.slf4j4json.Logger;
+import cn.tommyyang.slf4j4json.logger.Logger;
 import org.apache.commons.lang3.time.FastDateFormat;
 
 /**
