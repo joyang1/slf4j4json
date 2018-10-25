@@ -90,3 +90,7 @@ jsonLogger.field("msg","infotest2").longField("long", 23L).log();
          </repository>
      </repositories>
      ```
+     
+     
+## License
+Slf4j4json is available under the MIT License
