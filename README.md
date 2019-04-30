@@ -9,14 +9,16 @@
 1. 添加repository
 ``` java
 <repositories>
-    <repository>
-        <id>release</id>
-        <url>https://raw.github.com/joyang1/slf4j4json/master/</url>
-        <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-        </snapshots>
-    </repository>
+    <repositories>
+         <repository>
+             <id>release</id>
+             <url>https://raw.github.com/joyang1/slf4j4json/mvn-repo/</url>
+             <snapshots>
+                 <enabled>true</enabled>
+                 <updatePolicy>always</updatePolicy>
+             </snapshots>
+         </repository>
+     </repositories>
 </repositories>
 ```
 2. 添加dependency
@@ -24,7 +26,7 @@
 <dependency>
     <groupId>cn.tommyyang</groupId>
     <artifactId>slf4j4json</artifactId>
-    <version>1.1</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
@@ -90,6 +92,9 @@ jsonLogger.field("msg","infotest2").longField("long", 23L).log();
          </repository>
      </repositories>
      ```
+- `1.3.0版本`
+  - 添加kafka logger的实现，批量打印log到kafka
+  - 10s或者5m flush一次
      
      
 ## License
