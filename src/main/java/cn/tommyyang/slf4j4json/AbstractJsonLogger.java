@@ -1,10 +1,12 @@
-package cn.tommyyang.slf4j4json.logger;
+package cn.tommyyang.slf4j4json;
 
+import cn.tommyyang.slf4j4json.conf.LogConfig;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.commons.lang3.time.FastDateFormat;
+import org.apache.kafka.clients.producer.Producer;
 import org.slf4j.Logger;
 
 import java.net.InetAddress;
@@ -26,6 +28,10 @@ public abstract class AbstractJsonLogger implements JsonLogger {
     private JsonObject jsonObject;
     private JsonObject jsonObjectMore;
     private boolean includeLoggerName;
+    private LogConfig logConfig;
+
+    public AbstractJsonLogger() {
+    }
 
     public AbstractJsonLogger(Logger slf4jLogger, FastDateFormat formatter, Gson gson, boolean includeLoggerName) {
         this.slf4jLogger = slf4jLogger;
@@ -34,6 +40,15 @@ public abstract class AbstractJsonLogger implements JsonLogger {
         this.includeLoggerName = includeLoggerName;
         this.jsonObject = new JsonObject();
         this.jsonObjectMore = new JsonObject();
+    }
+
+    public AbstractJsonLogger(LogConfig logConfig, FastDateFormat formatter, Gson gson, boolean includeLoggerName) {
+        this.logConfig = logConfig;
+        this.formatter = formatter;
+        this.gson = gson;
+        this.jsonObject = new JsonObject();
+        this.jsonObjectMore = new JsonObject();
+        this.includeLoggerName = includeLoggerName;
     }
 
     @Override
@@ -218,8 +233,9 @@ public abstract class AbstractJsonLogger implements JsonLogger {
             }
         }
 
-        //this.jsonObject.add("index", this.gson.toJsonTree("server-end-log"));
+        this.jsonObject.add("index", this.gson.toJsonTree("server-end-log"));
         this.jsonObject.add("hostname", this.gson.toJsonTree(this.getHostName()));
+        this.jsonObject.add("app", this.gson.toJsonTree(this.logConfig.getAppName()));
         this.jsonObject.add("level", this.gson.toJsonTree(level));
 //        this.jsonObject.add("thread_name", this.gson.toJsonTree(Thread.currentThread().getName()));
 

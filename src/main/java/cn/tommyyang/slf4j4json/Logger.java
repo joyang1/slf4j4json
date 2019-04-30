@@ -1,5 +1,6 @@
-package cn.tommyyang.slf4j4json.logger;
+package cn.tommyyang.slf4j4json;
 
+import cn.tommyyang.slf4j4json.logger.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.commons.lang3.time.FastDateFormat;
@@ -7,7 +8,7 @@ import org.apache.commons.lang3.time.FastDateFormat;
 /**
  * Created by TommyYang on 2018/8/23.
  */
-public class Logger {
+class Logger {
     private org.slf4j.Logger slf4jLogger;
     private Gson gson = (new GsonBuilder()).disableHtmlEscaping().serializeNulls().create();
     private FastDateFormat formatter;
