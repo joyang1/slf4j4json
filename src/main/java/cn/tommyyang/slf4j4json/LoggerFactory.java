@@ -32,10 +32,7 @@ public class LoggerFactory {
         LoggerFactory.includeLoggerName = includeLoggerName;
     }
 
-    public static KafkaLogger getKafkaLogger() throws Exception {
-        if (producer == null){
-            throw new Exception("need to open kafka logger");
-        }
+    public static KafkaLogger getKafkaLogger() {
         return new KafkaLogger(producer, logConfig, formatter, includeLoggerName);
     }
 
