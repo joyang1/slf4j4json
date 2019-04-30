@@ -2,6 +2,8 @@ import cn.tommyyang.slf4j4json.KafkaLogger;
 import cn.tommyyang.slf4j4json.LoggerFactory;
 import cn.tommyyang.slf4j4json.conf.LogConfig;
 import cn.tommyyang.slf4j4json.conf.LogLevel;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -9,11 +11,14 @@ import org.junit.Test;
  */
 public class KafkaLoggerTest {
 
+    @Before
+    public void init(){
+        LogConfig conf = new LogConfig("Vinci", LogLevel.INFO, "localhost:9092", "admin-app-log");
+        LoggerFactory.openKafkaLogger(conf);
+    }
+
     @Test
     public void test() throws Exception {
-        LogConfig conf = new LogConfig("Vinci", LogLevel.INFO, "localhost:9092", "kfk-log");
-        LoggerFactory.openKafkaLogger(conf);
-
         KafkaLogger logger = LoggerFactory.getKafkaLogger();
         new Thread(new Runnable() {
             @Override
@@ -32,7 +37,11 @@ public class KafkaLoggerTest {
         }).start();
 
         Thread.sleep(10000);
-       //logger.close();
+        logger.close();
+    }
+
+    @After
+    public void close(){
 
     }
 
