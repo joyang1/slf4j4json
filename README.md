@@ -26,7 +26,7 @@
 <dependency>
     <groupId>cn.tommyyang</groupId>
     <artifactId>slf4j4json</artifactId>
-    <version>1.3.0</version>
+    <version>1.4.0</version>
 </dependency>
 ```
 
