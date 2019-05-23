@@ -18,22 +18,30 @@ public class LoggerFactory {
     private static Producer producer;
     private static LogConfig logConfig;
 
-    public static Logger getLogger(String name){
+    public static FileLogger getLogger(String name){
         org.slf4j.Logger slf4jLogger = org.slf4j.LoggerFactory.getLogger(name);
-        return new Logger(slf4jLogger, formatter, includeLoggerName);
+        return new FileLogger(slf4jLogger, formatter, includeLoggerName);
     }
 
-    public static Logger getLogger(Class<?> clazz){
+    public static FileLogger getLogger(Class<?> clazz){
         org.slf4j.Logger slf4jLogger = org.slf4j.LoggerFactory.getLogger(clazz);
-        return new Logger(slf4jLogger, formatter, includeLoggerName);
+        return new FileLogger(slf4jLogger, formatter, includeLoggerName);
     }
 
-    public static void setIncludeLoggerName(boolean includeLoggerName) {
+    private static void setIncludeLoggerName(boolean includeLoggerName) {
         LoggerFactory.includeLoggerName = includeLoggerName;
     }
 
-    public static KafkaLogger getKafkaLogger() {
+    private static KafkaLogger getKafkaLogger() {
         return new KafkaLogger(producer, logConfig, formatter, includeLoggerName);
+    }
+
+    public static Logger getLogger(){
+        if (producer == null || logConfig == null){
+            return getLogger("slf4j4json");
+        } else {
+            return getKafkaLogger();
+        }
     }
 
     public static void openKafkaLogger(LogConfig conf){

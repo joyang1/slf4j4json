@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * @author TommyYang on 2019-04-30
  */
-public class KafkaLogger implements Closeable {
+public class KafkaLogger extends Logger implements Closeable {
 
     private Producer producer;
     private Gson gson = (new GsonBuilder()).disableHtmlEscaping().serializeNulls().create();
@@ -31,6 +31,11 @@ public class KafkaLogger implements Closeable {
         this.logConfig = conf;
     }
 
+
+    @Override
+    public JsonLogger trace() {
+        return null;
+    }
 
     public JsonLogger info(){
         return new InfoLogger(this.producer, this.logConfig, this.formatter, this.gson, this.includeLoggerName);
