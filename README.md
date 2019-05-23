@@ -65,6 +65,20 @@ jsonLogger.strField("msg","infotest1").intField("port", 2).log();
 jsonLogger.field("msg","infotest2").longField("long", 23L).log();
 ```
 
+3. 1.4.0更新,只提供getLogger方法
+``` java
+LogConfig conf = new LogConfig("Vinci", LogLevel.INFO, "localhost:9092", "admin-app-log");
+LoggerFactory.openKafkaLogger(conf);
+
+Logger logger  = LoggerFactory.getLogger();
+
+logger.info().strField("test", "test-info").log();
+logger.error().strField("test", "test-error").log();
+logger.warn().strField("test", "test-warn").log();
+logger.debug().strField("test", "test-debug").log();
+
+```
+
 ## 输出
 ``` json
 {"key1":"value1","key2":1,"index":"server-end-log","host":"DESKTOP-2B1VG6J","level":"info","time":1535021174}
@@ -95,6 +109,9 @@ jsonLogger.field("msg","infotest2").longField("long", 23L).log();
 - `1.3.0版本`
   - 添加kafka logger的实现，批量打印log到kafka
   - 10s或者5m flush一次
+  
+- `1.4.0版本`
+  - 优化logger实现
      
      
 ## License
