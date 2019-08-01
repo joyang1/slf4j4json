@@ -94,9 +94,11 @@ jsonLogger.field("msg","infotest2").longField("long", 23L).log();
 
 3. 1.4.0更新, 只提供getLogger方法
 
-配置了 LogConfig 则打印 log 到 kafka，否则打印 log 到 file；
-如果打印 log 到 file 文件或者控制台，则需要配置 log4j.properties，具体如何配置见[使用](#使用)； 
-如果只用打印 log 到 kafka，则不用配置 log4j.properties。
+- 配置了 LogConfig 则打印 log 到 kafka，否则打印 log 到 file；
+
+- 如果打印 log 到 file 文件或者控制台，则需要配置 log4j.properties，具体如何配置见[使用](#使用)；
+ 
+- 如果只用打印 log 到 kafka，则不用配置 log4j.properties。
 
 ``` java
 
