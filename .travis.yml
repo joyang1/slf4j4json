@@ -5,7 +5,7 @@ script:
 - java -version
 - echo $JAVA_HOME
 jdk:
-#- oraclejdk8
+- oraclejdk8
 - openjdk8
 notification:
   email:
@@ -17,3 +17,5 @@ notification:
 cache:
   directories:
   - $HOME/cache
+
+dist: trusty
