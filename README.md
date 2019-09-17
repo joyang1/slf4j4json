@@ -1,12 +1,11 @@
 [![GitHub issues](https://img.shields.io/github/release/joyang1/slf4j4json.svg)](https://github.com/joyang1/slf4j4json/releases/latest)
 [![Build Status](https://travis-ci.org/joyang1/slf4j4json.svg?branch=master)](https://travis-ci.org/joyang1/slf4j4json.svg)
 
-
+# `slf4j4json`
 > 最好用的 Kafka Json Logger Java客户端。
 
 **最好用的 Kafka Json Logger 库；不尝试一下可惜了！**
 
-# `slf4j4json`
 ## Description
 
 一款为 Kafka 提供的 json logger 客户端，支持将 json 格式的 log 输出到 kafka、文件、控制台。
