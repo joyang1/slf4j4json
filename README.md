@@ -1,5 +1,6 @@
 [![GitHub issues](https://img.shields.io/github/release/joyang1/slf4j4json.svg)](https://github.com/joyang1/slf4j4json/releases/latest)
 [![Build Status](https://travis-ci.org/joyang1/slf4j4json.svg?branch=master)](https://travis-ci.org/joyang1/slf4j4json.svg)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/cn.tommyyang/slf4j4json/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cn.tommyyang/slf4j4json)
 
 # `slf4j4json`
 > 最好用的 Kafka Json Logger Java客户端。
