@@ -7,6 +7,12 @@ script:
 jdk:
 - oraclejdk8
 - openjdk8
+
+ignore:
+  - *.md
+  - .gitignore
+  - LICENSE
+
 notification:
   email:
     recipients:
